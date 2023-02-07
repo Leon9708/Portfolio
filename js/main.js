@@ -177,29 +177,38 @@ $(document).ready(function() {
 }); // document ready end 
 let overlay = false;
 
-const angular = [];
+const angular = ["ringoffire.png"];
 const javaScript = ["elpolloloco.png", "pokedex.jpg", "join.png"];
-const jsClasses = ['img_portfolio', 'img_portfolio', 'join_img']
-const overlayTextJs = ['El Pollo Loco - Jump and Run Game', 'PokeDex - working with Rest Api', 'Join - Canbanboard']
+const Classes = ['img_portfolio', 'img_portfolio', 'join_img', 'ringoffire_img']
+const overlayText = ['El Pollo Loco - Jump and Run Game', 'PokeDex - working with Rest Api', 'Join - Canbanboard', 'Ring Of Fire - Multiplayergame']
+let currentPorjects;
 
 function selectPortfolio(id) {
     if (id === "javaScript") {
+        currentPorjects = 'js';
         loadPortfolioJs()
     } else if (id === "angular") {
+        currentPorjects = 'ng';
         loadPortfolioAngular()
-    } else {
-        loadPortfolioAngular()
+    } else if (currentPorjects !== "all") {
+        currentPorjects = 'all';
         loadPortfolioJs()
+        loadPortfolioAngular()
     }
 }
 
 function loadPortfolioAngular() {
+    let delay = 0.3;
     overlay = false
-    document.getElementById('containerPortfolio').innerHTML = "";
+    if (currentPorjects !== 'all') {
+        document.getElementById('containerPortfolio').innerHTML = "";
+    }
     for (let i = 0; i < angular.length; i++) {
         const img = angular[i];
-
-        document.getElementById('containerPortfolio').innerHTML += generatePortfolio(img);
+        delay += 0.2;
+        let newId = javaScript.length + i
+        const clas = Classes[newId];
+        document.getElementById('containerPortfolio').innerHTML += generatePortfolio(img, clas, delay, newId);
     }
 }
 
@@ -208,7 +217,7 @@ function loadPortfolioJs() {
     document.getElementById('containerPortfolio').innerHTML = "";
     for (let i = 0; i < javaScript.length; i++) {
         const img = javaScript[i];
-        const jsclass = jsClasses[i];
+        const jsclass = Classes[i];
         delay += 0.2;
         console.log(delay);
         document.getElementById('containerPortfolio').innerHTML += generatePortfolio(img, jsclass, delay, i);
@@ -225,28 +234,24 @@ function generatePortfolio(img, clas, delay, i) {
 function hoverProject(id) {
     let box = document.getElementById(id);
     let idNum = id.replace(/^\D+/g, '')
-    console.log(idNum)
     if (overlay === false) {
         overlay = true
-        box.innerHTML += generateOverlay(idNum);
+        box.innerHTML += generateOverlay(idNum, overlayText)
     } else {
         box.removeChild(box.lastChild);
         overlay = false
     }
-
-
-
 }
 
-function generateOverlay(id) {
+function generateOverlay(id, overlay) {
     return `
     <div class="overlay_project wow fadeInUpBig" >
-    <p id="overlayText${id}" class="overlay_text">${overlayTextJs[id]}</p>
+    <p id="overlayText${id}" class="overlay_text">${overlay[id]}</p>
     </div>`
 }
 
 
-/* Contact Form JS*/
+/* Contact Form JS
 (function($) {
     'use strict';
 
@@ -292,4 +297,4 @@ function generateOverlay(id) {
         $(this).removeClass('reqError');
     });
 
-})(jQuery);
+})(jQuery); */
