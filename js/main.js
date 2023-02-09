@@ -199,7 +199,6 @@ function selectPortfolio(id) {
     }
 }
 
-
 function loadPortfolioAngular() {
     if (currentPorjects !== 'all') {
         document.getElementById('containerPortfolio').innerHTML = "";
