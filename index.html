@@ -47,8 +47,10 @@
 
     <nav>
         <div class="row ">
-            <div class="container nav_center">
-                <h1 class="logo_text"><b>Leon Ring</b></h1>
+            <div class="container nav_center box_nav">
+                <h1 class="logo_text">
+                    <a href="index.html"><b>Leon Ring</b></a>
+                </h1>
                 <div class="responsive"><i data-icon="m" class="icon"></i></div>
                 <ul class="nav-menu">
                     <li><a href="#home" class="smoothScroll">Home</a></li>
@@ -191,18 +193,30 @@
             </div>
             <div class="place_portfolio">
                 <div id="containerPortfolio" class="container_portfolio">
-                    <a onmouseenter="hoverProject(this.id)" onmouseleave="hoverProject(this.id)" id="project0" class="box_portfolio  wow fadeInUp" data-wow-delay="0.3s">
-                        <img class="img_portfolio" src="images/elpolloloco.png">
-                    </a>
-                    <a onmouseenter="hoverProject(this.id)" onmouseleave="hoverProject(this.id)" id="project1" class="box_portfolio  wow fadeInUp" data-wow-delay="0.5s">
-                        <img class="img_portfolio" src="images/pokedex.jpg">
-                    </a>
-                    <a onmouseenter="hoverProject(this.id)" onmouseleave="hoverProject(this.id)" id="project2" class="box_portfolio  wow fadeInUp" data-wow-delay="0.7s">
-                        <img class="join_img" src="images/join.png">
-                    </a>
-                    <a onmouseenter="hoverProject(this.id)" onmouseleave="hoverProject(this.id)" id="project3" class="box_portfolio  wow fadeInUp" data-wow-delay="0.9s">
-                        <img class="ringoffire_img" src="images/ringoffire.png">
-                    </a>
+                    <div class="place_portfolio_box fadeInUp" data-wow-delay="0.3s">
+                        <div onmouseleave="hoverOfProject()" onmouseenter="hoverOnProject(this.id)" id="project0" class="hoverContainer"></div>
+                        <a id="p0" class="box_portfolio   ">
+                            <img class="el_pollo_img" src="images/elpolloloco.png">
+                        </a>
+                    </div>
+                    <div class="place_portfolio_box fadeInUp wow " data-wow-delay="0.5s">
+                        <div onmouseleave="hoverOfProject()" onmouseenter="hoverOnProject(this.id)" id="project1" class="hoverContainer"></div>
+                        <a class="box_portfolio     ">
+                            <img class="img_portfolio" src="images/pokedex.jpg">
+                        </a>
+                    </div>
+                    <div class="place_portfolio_box fadeInUp wow " data-wow-delay="0.7s">
+                        <div onmouseleave="hoverOfProject()" onmouseenter="hoverOnProject(this.id)" id="project2" class="hoverContainer"></div>
+                        <a class="box_portfolio   ">
+                            <img class="join_img" src="images/join.png">
+                        </a>
+                    </div>
+                    <div class="place_portfolio_box fadeInUp wow" data-wow-delay="0.9s">
+                        <div onmouseleave="hoverOfProject()" onmouseenter="hoverOnProject(this.id)" id="project3" class="hoverContainer"></div>
+                        <a class="box_portfolio   ">
+                            <img class="img_portfolio" src="images/ringoffire.jpg">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

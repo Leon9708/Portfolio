@@ -77,9 +77,12 @@
     
     .logo_text {
         height: 100%;
-        font-size: 20px;
         float: left;
         flex: 1;
+    }
+    
+    .logo_text a {
+        font-size: 20px !important;
     }
     
     .responsive {
@@ -854,6 +857,8 @@
     
     .icon {
         cursor: pointer;
+        display: flex;
+        align-items: center;
     }
     
     .work-areas .area .icon i {
@@ -1158,7 +1163,7 @@
     }
     /*max Width 768px */
     
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 837px) {
         .home-content h1 {
             font-size: 32px;
             margin-bottom: 10px;
@@ -1227,7 +1232,7 @@
     }
     /*min Width 768px */
     
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 837px) {
         .nav-menu {
             display: block!important;
         }
@@ -1336,14 +1341,21 @@
         color: black;
     }
     
-    .container_portfolio {
+    .place_portfolio {
         width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .container_portfolio {
+        width: 80%;
         display: flex;
         justify-content: center;
         gap: 32px;
         align-items: center;
         flex-wrap: wrap;
         padding-bottom: 64px;
+        margin: 0;
     }
     
     .box_portfolio {
@@ -1351,8 +1363,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 345px;
-        height: 345px;
+        width: 375px;
+        height: 375px;
         box-shadow: 0px 0px 2px 0.5px rgb(0 0 0 / 9%);
         transition: all ease-in-out 0.4s;
         cursor: pointer;
@@ -1377,6 +1389,7 @@
         transform: translateY(-50%);
         background-color: grey;
         pointer-events: none;
+        z-index: 100;
     }
     
     .overlay_text {
@@ -1386,6 +1399,42 @@
         text-transform: uppercase;
         text-align: center;
         line-height: 1.15rem;
+    }
+    
+    @media (max-width:1220px) {
+        .container_portfolio {
+            width: 95%;
+        }
+        .box_portfolio {
+            width: 343px;
+            height: 343px;
+        }
+        .overlay_text {
+            font-size: 14px;
+        }
+    }
+    
+    @media (max-width:995px) {
+        .container_portfolio {
+            width: 100%;
+        }
+        .box_portfolio {
+            width: 300px;
+            height: 300px;
+        }
+        .overlay_text {
+            font-size: 13px;
+        }
+    }
+    
+    @media (max-width:685px) {
+        .box_portfolio {
+            width: 345px;
+            height: 345px;
+        }
+        .overlay_text {
+            font-size: 14px;
+        }
     }
     
     .img_portfolio {
@@ -1409,11 +1458,6 @@
     .ringoffire_img {
         width: 90%;
         object-fit: contain;
-    }
-    
-    #project3 {
-        background-image: radial-gradient(rgb(90, 176, 90), rgb(36, 150, 36), rgb(0, 94, 0));
-        height: 345px;
     }
     
     .box_essentials {
@@ -1500,7 +1544,6 @@
     .box_nav a {
         color: black;
         text-decoration: none;
-        font-size: 0.9rem;
         font-weight: 500;
     }
     
@@ -1517,4 +1560,39 @@
         .menu_nav {
             display: none;
         }
+    }
+    
+    #p0 {
+        background: linear-gradient(0deg, rgb(227, 179, 83) 0%, rgb(181, 130, 65) 100%);
+    }
+    
+    .el_pollo_img {
+        width: 100%;
+    }
+    
+    .hoverContainer {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 5;
+        background-color: transparent;
+    }
+    
+    .place_portfolio_box {
+        position: relative;
+        width: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 0px 2px 0.5px rgb(0 0 0 / 9%);
+        transition: all ease-in-out 0.4s;
+        cursor: pointer;
+    }
+    
+    .place_portfolio_box:hover {
+        box-shadow: 0px 16px 22px 0px rgba(90, 91, 95, 0.3);
+        transition: all ease-in-out 0.4s;
+        transform: scale(1.05);
     }

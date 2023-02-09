@@ -60,7 +60,7 @@ $(document).ready(function() {
 
         $('a').each(function() {
             $(this).removeClass('active');
-            if ($(window).width() < 768) {
+            if ($(window).width() < 837) {
                 $('.nav-menu').slideUp();
             }
         });
@@ -126,7 +126,7 @@ $(document).ready(function() {
 
     // HOME TYPED JS
     $(".element").typed({
-        strings: ["Leon Ring", "Web Developer"],
+        strings: ["Leon Ring", " a Web Developer"],
         typeSpeed: 10,
         loop: true,
         backDelay: 2000
@@ -175,15 +175,17 @@ $(document).ready(function() {
 
 
 }); // document ready end 
-let overlay = false;
-
-const angular = ["ringoffire.png"];
-const javaScript = ["elpolloloco.png", "pokedex.jpg", "join.png"];
-const Classes = ['img_portfolio', 'img_portfolio', 'join_img', 'ringoffire_img']
+const angular = ["ringoffire.jpg"];
+const javaScript = ["zoom_pollo_loco.png", "pokedex.jpg", "join.png"];
+const Classes = ['el_pollo_img', 'img_portfolio', 'join_img', 'img_portfolio']
 const overlayText = ['El Pollo Loco - Jump and Run Game', 'PokeDex - working with Rest Api', 'Join - Canbanboard', 'Ring Of Fire - Multiplayergame']
-let currentPorjects;
+let currentPorjects = all;;
+let delay = 0.5;
+
+
 
 function selectPortfolio(id) {
+    delay = 0.5;
     if (id === "javaScript") {
         currentPorjects = 'js';
         loadPortfolioJs()
@@ -197,50 +199,64 @@ function selectPortfolio(id) {
     }
 }
 
+
 function loadPortfolioAngular() {
-    let delay = 0.3;
-    overlay = false
     if (currentPorjects !== 'all') {
         document.getElementById('containerPortfolio').innerHTML = "";
     }
+    document.getElementById('containerPortfolio').style.opacity = 0;
+
     for (let i = 0; i < angular.length; i++) {
         const img = angular[i];
-        delay += 0.2;
         let newId = javaScript.length + i
         const clas = Classes[newId];
         document.getElementById('containerPortfolio').innerHTML += generatePortfolio(img, clas, delay, newId);
+        delay += 0.2;
     }
+
+    setTimeout(() => {
+        document.getElementById('containerPortfolio').style.opacity = 1;
+    }, 300);
 }
 
 function loadPortfolioJs() {
-    let delay = 0.3;
     document.getElementById('containerPortfolio').innerHTML = "";
+    document.getElementById('containerPortfolio').style.opacity = 0;
+
     for (let i = 0; i < javaScript.length; i++) {
         const img = javaScript[i];
         const jsclass = Classes[i];
-        delay += 0.2;
-        console.log(delay);
         document.getElementById('containerPortfolio').innerHTML += generatePortfolio(img, jsclass, delay, i);
+        delay += 0.2;
     }
+
+    setTimeout(() => {
+        document.getElementById('containerPortfolio').style.opacity = 1;
+    }, 300);
 }
 
 function generatePortfolio(img, clas, delay, i) {
     return `  
-    <a onmouseenter="hoverProject(this.id)" onmouseleave="hoverProject(this.id)" id="project${i}" class="box_portfolio  wow fadeUp2"" data-wow-delay="${delay}s" >
-        <img class="${clas}" src="images/${img}">
-    </a>`
+    <div class="place_portfolio_box  wow fadeUp2" data-wow-delay="${delay}s">
+        <div onmouseleave="hoverOfProject()" onmouseenter="hoverOnProject(this.id)" id="project${i}" class="hoverContainer"> </div>
+        <a id="p${i}" class="box_portfolio" >
+            <img  class="${clas}" src="images/${img}">
+        </a>
+    </div>`
 }
 
-function hoverProject(id) {
-    let box = document.getElementById(id);
-    let idNum = id.replace(/^\D+/g, '')
-    if (overlay === false) {
-        overlay = true
-        box.innerHTML += generateOverlay(idNum, overlayText)
-    } else {
-        box.removeChild(box.lastChild);
-        overlay = false
-    }
+function hoverOnProject(id) {
+    let box = document.getElementById(id).parentElement;
+    let portfolioBox = box.querySelector(".box_portfolio");
+    let idNum = id.replace(/^\D+/g, '');
+    portfolioBox.innerHTML += generateOverlay(idNum, overlayText)
+}
+
+function hoverOfProject() {
+    const overlayProjects = document.querySelectorAll(".overlay_project");
+    overlayProjects.forEach((overlayProject) => {
+        overlayProject.remove()
+    });
 }
 
 function generateOverlay(id, overlay) {
@@ -249,7 +265,6 @@ function generateOverlay(id, overlay) {
     <p id="overlayText${id}" class="overlay_text">${overlay[id]}</p>
     </div>`
 }
-
 
 /* Contact Form JS
 (function($) {
