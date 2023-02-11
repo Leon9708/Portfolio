@@ -179,6 +179,7 @@ const angular = ["ringoffire.jpg"];
 const javaScript = ["zoom_pollo_loco.png", "pokedex.jpg", "join.png"];
 const Classes = ['el_pollo_img', 'img_portfolio', 'join_img', 'img_portfolio']
 const overlayText = ['El Pollo Loco - Jump and Run Game', 'PokeDex - working with Rest Api', 'Join - Canbanboard', 'Ring Of Fire - Multiplayergame']
+const links = ['https://leon-ring.developerakademie.net/Projekt%208%20-%20El_Pollo_Loco/index.html', 'https://leon-ring.developerakademie.net/Projekt%207%20-%20PokedeX/index.html', 'https://leon-ring.developerakademie.net/Join/index.html', 'https://leon-ring.developerakademie.net/ringooffire/']
 let currentPorjects = all;;
 let delay = 0.5;
 
@@ -209,7 +210,8 @@ function loadPortfolioAngular() {
         const img = angular[i];
         let newId = javaScript.length + i
         const clas = Classes[newId];
-        document.getElementById('containerPortfolio').innerHTML += generatePortfolio(img, clas, delay, newId);
+        const link = links[newId];
+        document.getElementById('containerPortfolio').innerHTML += generatePortfolio(img, clas, delay, newId, link);
         delay += 0.2;
     }
 
@@ -225,7 +227,8 @@ function loadPortfolioJs() {
     for (let i = 0; i < javaScript.length; i++) {
         const img = javaScript[i];
         const jsclass = Classes[i];
-        document.getElementById('containerPortfolio').innerHTML += generatePortfolio(img, jsclass, delay, i);
+        const link = links[i];
+        document.getElementById('containerPortfolio').innerHTML += generatePortfolio(img, jsclass, delay, i, link);
         delay += 0.2;
     }
 
@@ -234,13 +237,13 @@ function loadPortfolioJs() {
     }, 300);
 }
 
-function generatePortfolio(img, clas, delay, i) {
+function generatePortfolio(img, clas, delay, i, link) {
     return `  
     <div class="place_portfolio_box  wow fadeUp2" data-wow-delay="${delay}s">
-        <div onmouseleave="hoverOfProject()" onmouseenter="hoverOnProject(this.id)" id="project${i}" class="hoverContainer"> </div>
-        <a id="p${i}" class="box_portfolio" >
+        <a href="${link}" onmouseleave="hoverOfProject()" onmouseenter="hoverOnProject(this.id)" id="project${i}" class="hoverContainer"> </a>
+        <div  id="p${i}" class="box_portfolio" >
             <img  class="${clas}" src="images/${img}">
-        </a>
+        </div>
     </div>`
 }
 
