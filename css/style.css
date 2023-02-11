@@ -1554,7 +1554,6 @@
     .send_message {
         font-size: 1.5rem;
         font-weight: 700;
-        margin-top: 2rem;
     }
     
     @media (max-width:650px) {
