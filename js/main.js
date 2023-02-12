@@ -174,7 +174,11 @@ $(document).ready(function() {
     }
 
 
-}); // document ready end 
+
+});
+// document ready end 
+
+
 const angular = ["ringoffire.jpg"];
 const javaScript = ["zoom_pollo_loco.png", "pokedex.jpg", "join.png"];
 const Classes = ['el_pollo_img', 'img_portfolio', 'join_img', 'img_portfolio']
@@ -183,7 +187,9 @@ const links = ['https://leon-ring.developerakademie.net/Projekt%208%20-%20El_Pol
 let currentPorjects = all;;
 let delay = 0.5;
 
-
+function navigateBack() {
+    window.location.href = 'https://leon-ring.developerakademie.net/portfolio/index.html'
+}
 
 function selectPortfolio(id) {
     delay = 0.5;
