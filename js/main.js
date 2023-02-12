@@ -82,12 +82,12 @@ $(document).ready(function() {
             $('nav ul li a').each(function() {
                 var currLink = $(this);
                 var refElement = $(currLink.attr("href"));
-                if (refElement.position().top - 90 <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-                    $('nav ul li a').removeClass("active");
-                    currLink.addClass("active");
-                } else {
-                    currLink.removeClass("active");
-                }
+                /*       if (refElement.position().top - 50 <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+                          $('nav ul li a').removeClass("active");
+                          currLink.addClass("active");
+                      } else {
+                          currLink.removeClass("active");
+                      } */
             });
         }
     }

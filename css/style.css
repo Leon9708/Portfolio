@@ -1051,7 +1051,7 @@
     
     .img_fill {
         width: 100%;
-        max-height: 500px;
+        max-height: 600px;
         object-fit: cover;
         object-position: 50% 60%;
     }
@@ -1265,6 +1265,11 @@
         height: fit-content;
         margin-top: 90px;
         padding-bottom: 48px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
     }
     
     .heading_skills {
@@ -1277,11 +1282,62 @@
     }
     
     .container_skills {
-        display: flex;
-        justify-content: center;
-        gap: 32px;
-        flex-wrap: wrap;
+        width: 60%;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 20px;
         padding-top: 24px;
+    }
+    
+    .container_skills_2 {
+        width: 49%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
+        padding-top: 24px;
+    }
+    
+    .change_grid {
+        display: none !important;
+    }
+    
+    @media (max-width: 992px) {
+        .container_skills {
+            grid-template-columns: repeat(3, 1fr);
+            width: 70%;
+        }
+        .container_skills_2 {
+            grid-template-columns: repeat(3, 1fr);
+            width: 70%;
+        }
+        .change_grid {
+            display: flex !important;
+        }
+        .change_grid_2 {
+            display: none !important;
+        }
+    }
+    
+    @media (max-width: 500px) {
+        .container_skills {
+            grid-template-columns: repeat(3, 1fr);
+            width: 100%;
+            grid-gap: 0;
+            row-gap: 10px;
+        }
+        .container_skills_2 {
+            grid-template-columns: repeat(3, 1fr);
+            width: 100%;
+            grid-gap: 0;
+            row-gap: 10px;
+            padding-top: 10px;
+        }
+        .box_skills h3 {
+            font-size: 0.75rem;
+        }
+        .box_skills {
+            width: 30px;
+        }
     }
     
     .box_skills {
@@ -1289,7 +1345,7 @@
         align-items: center;
         gap: 1rem;
         flex-direction: column;
-        width: 120px;
+        width: 100%;
     }
     
     .box_img_skills {
@@ -1414,7 +1470,7 @@
         }
     }
     
-    @media (max-width:995px) {
+    @media (max-width:992px) {
         .container_portfolio {
             width: 100%;
         }
@@ -1429,8 +1485,8 @@
     
     @media (max-width:685px) {
         .box_portfolio {
-            width: 345px;
-            height: 345px;
+            width: 310px;
+            height: 310px;
         }
         .overlay_text {
             font-size: 14px;
@@ -1551,11 +1607,6 @@
         color: rgb(157, 157, 157);
     }
     
-    .send_message {
-        font-size: 1.5rem;
-        font-weight: 700;
-    }
-    
     @media (max-width:650px) {
         .menu_nav {
             display: none;
@@ -1595,4 +1646,71 @@
         box-shadow: 0px 16px 22px 0px rgba(90, 91, 95, 0.3);
         transition: all ease-in-out 0.4s;
         transform: scale(1.05);
+    }
+    
+    .footer_imprint {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 140px !important;
+    }
+    
+    .btn_back {
+        background-color: rgb(5, 132, 174);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 1em;
+        cursor: pointer;
+    }
+    
+    .box_send {
+        margin-top: 10rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .box_send p {
+        font-size: 1rem;
+    }
+    
+    .btn_back {
+        margin-top: 1.25rem;
+    }
+    
+    .btn_back:hover {
+        background-color: rgb(15, 71, 90);
+    }
+    
+    .send_message {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    
+    @media (max-width:600px) {
+        .send_message {
+            font-size: 1.5rem;
+        }
+        .box_send p {
+            font-size: 0.9rem;
+        }
+        .box_send {
+            margin-top: 15rem;
+        }
+    }
+    
+    @media (max-width:364px) {
+        .send_message {
+            font-size: 1.15rem;
+        }
+        .box_send p {
+            font-size: 0.7rem;
+        }
+        .btn_back {
+            font-size: 0.8rem;
+        }
     }
