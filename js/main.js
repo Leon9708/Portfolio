@@ -250,7 +250,7 @@ function loadPortfolioJs() {
 function generatePortfolio(img, clas, delay, i, link) {
     return `  
     <div class="place_portfolio_box  wow fadeUp2" data-wow-delay="${delay}s">
-        <a href="${link}" onmouseleave="hoverOfProject()" onmouseenter="hoverOnProject(this.id)" id="project${i}" class="hoverContainer"> </a>
+        <a target="_blank" href="${link}" onmouseleave="hoverOfProject()" onmouseenter="hoverOnProject(this.id)" id="project${i}" class="hoverContainer"> </a>
         <div  id="p${i}" class="box_portfolio" >
             <img  class="${clas}" src="images/${img}">
         </div>
