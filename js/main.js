@@ -187,6 +187,10 @@ const links = ['https://leon-ring.developerakademie.net/Projekt%208%20-%20El_Pol
 let currentPorjects = all;;
 let delay = 0.5;
 
+function render() {
+    selectPortfolio('all')
+}
+
 function navigateBack() {
     window.location.href = 'https://leon-ring.developerakademie.net/portfolio/index.html'
 }

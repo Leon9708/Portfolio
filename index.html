@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="css/magnific-popup.css" />
 
-
     <!-- Google Web fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
@@ -28,7 +27,7 @@
 
 </head>
 
-<body>
+<body onload="render()">
 
     <!-- Preloading -->
     <div id="preloader">
@@ -44,7 +43,7 @@
         <div class="row ">
             <div class="container nav_center box_nav">
                 <h1 class="logo_text">
-                    <a href="https://leon-ring.developerakademie.net/portfoliO/index.html"><b>Leon Ring</b></a>
+                    <a href="https://leon-ring.developerakademie.net/portfolio/index.html"><b>Leon Ring</b></a>
                 </h1>
                 <div class="responsive"><i data-icon="m" class="icon"></i></div>
                 <ul class="nav-menu">
@@ -112,8 +111,11 @@
                     </div>
                 </div>
                 <div class="box_skills">
-                    <div class="box_img_skills">
-                        <img class="img_skills" src="images/html_css.png" alt="">
+                    <div class="box_img_skills place_html_img">
+                        <div class="place_img">
+                            <img class="html_img " src="images/html.png">
+                            <img class="css_img" src="images/html_css.png" alt="">
+                        </div>
                     </div>
                     <div class="box_text_skills">
                         <h3 class="text_skills">html / css</h3>
@@ -196,30 +198,7 @@
             </div>
             <div class="place_portfolio">
                 <div id="containerPortfolio" class="container_portfolio">
-                    <div class="place_portfolio_box fadeInUp" data-wow-delay="0.3s">
-                        <a href="https://leon-ring.developerakademie.net/Projekt%208%20-%20El_Pollo_Loco/index.html" onmouseleave="hoverOfProject()" onmouseenter="hoverOnProject(this.id)" id="project0" class="hoverContainer"></a>
-                        <div id="p0" class="box_portfolio   ">
-                            <img class="el_pollo_img" src="images/elpolloloco.png">
-                        </div>
-                    </div>
-                    <div class="place_portfolio_box fadeInUp wow " data-wow-delay="0.5s">
-                        <a href="https://leon-ring.developerakademie.net/Projekt%207%20-%20PokedeX/index.html" onmouseleave="hoverOfProject()" onmouseenter="hoverOnProject(this.id)" id="project1" class="hoverContainer"></a>
-                        <div class="box_portfolio     ">
-                            <img class="img_portfolio" src="images/pokedex.jpg">
-                        </div>
-                    </div>
-                    <div class="place_portfolio_box fadeInUp wow " data-wow-delay="0.7s">
-                        <a href="https://leon-ring.developerakademie.net/Join/index.html" onmouseleave="hoverOfProject()" onmouseenter="hoverOnProject(this.id)" id="project2" class="hoverContainer"></a>
-                        <div class="box_portfolio   ">
-                            <img class="join_img" src="images/join.png">
-                        </div>
-                    </div>
-                    <div class="place_portfolio_box fadeInUp wow" data-wow-delay="0.9s">
-                        <a href="https://leon-ring.developerakademie.net/ringooffire/" onmouseleave="hoverOfProject()" onmouseenter="hoverOnProject(this.id)" id="project3" class="hoverContainer"></a>
-                        <div class="box_portfolio   ">
-                            <img class="img_portfolio" src="images/ringoffire.jpg">
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
