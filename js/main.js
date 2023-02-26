@@ -183,8 +183,8 @@ const angular = ["ringoffire.jpg"];
 const javaScript = ["zoom_pollo_loco.png", "pokedex.jpg", "join.png"];
 const Classes = ['el_pollo_img', 'img_portfolio', 'join_img', 'img_portfolio']
 const overlayText = ['El Pollo Loco - Jump and Run Game', 'PokeDex - working with Rest Api', 'Join - Canbanboard', 'Ring Of Fire - Multiplayergame']
-const links = ['https://leon-ring.developerakademie.net/Projekt%208%20-%20El_Pollo_Loco/index.html', 'https://leon-ring.developerakademie.net/Projekt%207%20-%20PokedeX/index.html', 'https://leon-ring.developerakademie.net/Join/index.html', 'https://leon-ring.developerakademie.net/ringooffire/']
-let currentPorjects = all;;
+const links = ['https://el-pollo-loco.leon-ring.de', 'https://pokdex.leon-ring.de', 'https://join.leon-ring.de', 'https://ring-of-fire.leon-ring.de']
+let currentPorjects;
 let delay = 0.5;
 
 function render() {
@@ -192,7 +192,7 @@ function render() {
 }
 
 function navigateBack() {
-    window.location.href = 'https://leon-ring.developerakademie.net/portfolio/index.html'
+    window.location.href = 'leon-ring.de'
 }
 
 function selectPortfolio(id) {
