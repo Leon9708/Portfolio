@@ -192,7 +192,7 @@ function render() {
 }
 
 function navigateBack() {
-    window.location.href = 'leon-ring.de'
+    window.location.href = 'https://leon-ring.de/'
 }
 
 function selectPortfolio(id) {
